@@ -45,7 +45,6 @@ jobs:
                     -F caption="$1"
                   git config --global user.name 'Bob The Builder'
                   git config --global user.email 'bob@the.builder'
-                  cd GitBuilds
                   git add SuperiorWalls-$(echo $GITHUB_SHA | cut -c1-8).apk
                   git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}"
                   git commit -m "bot: build installables <$(echo $GITHUB_SHA | cut -c1-8)>"
